@@ -1,3 +1,345 @@
 
-<!-- saved from url=(0033)https://astraclientorg.github.io/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="color-scheme" content="light dark"></head><body><div class="line-gutter-backdrop"></div><form autocomplete="off"><label class="line-wrap-control">Line wrap<input type="checkbox" aria-label="Line wrap"></label></form><table><tbody><tr><td class="line-number" value="1"></td><td class="line-content"><span class="html-doctype">&lt;!DOCTYPE html&gt;</span></td></tr><tr><td class="line-number" value="2"></td><td class="line-content"><span class="html-tag">&lt;html <span class="html-attribute-name">style</span>="<span class="html-attribute-value">width:100%;height:100%;background-color:black;</span>"&gt;</span></td></tr><tr><td class="line-number" value="3"></td><td class="line-content">	<span class="html-tag">&lt;head&gt;</span></td></tr><tr><td class="line-number" value="4"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">charset</span>="<span class="html-attribute-value">UTF-8</span>" /&gt;</span></td></tr><tr><td class="line-number" value="5"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">name</span>="<span class="html-attribute-value">viewport</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0</span>" /&gt;</span></td></tr><tr><td class="line-number" value="6"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">name</span>="<span class="html-attribute-value">description</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">EaglercraftX 1.8 test directory HTML page</span>" /&gt;</span></td></tr><tr><td class="line-number" value="7"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">name</span>="<span class="html-attribute-value">keywords</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8</span>" /&gt;</span></td></tr><tr><td class="line-number" value="8"></td><td class="line-content">		<span class="html-tag">&lt;title&gt;</span>EaglercraftX 1.8<span class="html-tag">&lt;/title&gt;</span></td></tr><tr><td class="line-number" value="9"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">property</span>="<span class="html-attribute-value">og:locale</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">en-US</span>" /&gt;</span></td></tr><tr><td class="line-number" value="10"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">property</span>="<span class="html-attribute-value">og:type</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">website</span>" /&gt;</span></td></tr><tr><td class="line-number" value="11"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">property</span>="<span class="html-attribute-value">og:title</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">EaglercraftX 1.8</span>" /&gt;</span></td></tr><tr><td class="line-number" value="12"></td><td class="line-content">		<span class="html-tag">&lt;meta <span class="html-attribute-name">property</span>="<span class="html-attribute-value">og:description</span>" <span class="html-attribute-name">content</span>="<span class="html-attribute-value">test directory HTML page</span>" /&gt;</span></td></tr><tr><td class="line-number" value="13"></td><td class="line-content">		<span class="html-tag">&lt;link <span class="html-attribute-name">type</span>="<span class="html-attribute-value">image/png</span>" <span class="html-attribute-name">rel</span>="<span class="html-attribute-value">shortcut icon</span>" <span class="html-attribute-name">href</span>="<a class="html-attribute-value html-resource-link" target="_blank" href="https://astraclientorg.github.io/favicon.png" rel="noreferrer noopener">favicon.png</a>" /&gt;</span></td></tr><tr><td class="line-number" value="14"></td><td class="line-content">		<span class="html-tag">&lt;script <span class="html-attribute-name">type</span>="<span class="html-attribute-value">text/javascript</span>" <span class="html-attribute-name">src</span>="<a class="html-attribute-value html-resource-link" target="_blank" href="https://astraclientorg.github.io/classes.js" rel="noreferrer noopener">classes.js</a>"&gt;</span><span class="html-tag">&lt;/script&gt;</span></td></tr><tr><td class="line-number" value="15"></td><td class="line-content">		<span class="html-tag">&lt;script <span class="html-attribute-name">type</span>="<span class="html-attribute-value">text/javascript</span>"&gt;</span></td></tr><tr><td class="line-number" value="16"></td><td class="line-content">			"use strict";</td></tr><tr><td class="line-number" value="17"></td><td class="line-content">			window.addEventListener("load", function() {</td></tr><tr><td class="line-number" value="18"></td><td class="line-content">				if(window.location.href.indexOf("file:") === 0) {</td></tr><tr><td class="line-number" value="19"></td><td class="line-content">					alert("HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP");</td></tr><tr><td class="line-number" value="20"></td><td class="line-content">				}else {</td></tr><tr><td class="line-number" value="21"></td><td class="line-content">					var relayId = Math.floor(Math.random() * 3);</td></tr><tr><td class="line-number" value="22"></td><td class="line-content">					window.eaglercraftXOpts = {</td></tr><tr><td class="line-number" value="23"></td><td class="line-content">						demoMode: false,</td></tr><tr><td class="line-number" value="24"></td><td class="line-content">						container: "game_frame",</td></tr><tr><td class="line-number" value="25"></td><td class="line-content">						assetsURI: "assets.epk",</td></tr><tr><td class="line-number" value="26"></td><td class="line-content">						localesURI: "lang/",</td></tr><tr><td class="line-number" value="27"></td><td class="line-content">						worldsDB: "worlds",</td></tr><tr><td class="line-number" value="28"></td><td class="line-content">						logInvalidCerts: true,</td></tr><tr><td class="line-number" value="29"></td><td class="line-content">						crashOnUncaughtExceptions: true,</td></tr><tr><td class="line-number" value="30"></td><td class="line-content">						servers: [</td></tr><tr><td class="line-number" value="31"></td><td class="line-content">							{ addr: "ws://localhost:8081/", name: "Local test server" }</td></tr><tr><td class="line-number" value="32"></td><td class="line-content">						],</td></tr><tr><td class="line-number" value="33"></td><td class="line-content">						relays: [</td></tr><tr><td class="line-number" value="34"></td><td class="line-content">							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId === 0 },</td></tr><tr><td class="line-number" value="35"></td><td class="line-content">							{ addr: "wss://relay.lax1dude.net/", comment: "lax1dude relay #2", primary: relayId === 1 },</td></tr><tr><td class="line-number" value="36"></td><td class="line-content">							{ addr: "wss://relay.shhnowisnottheti.me/", comment: "ayunami relay #1", primary: relayId === 2 }</td></tr><tr><td class="line-number" value="37"></td><td class="line-content">						]</td></tr><tr><td class="line-number" value="38"></td><td class="line-content">					};</td></tr><tr><td class="line-number" value="39"></td><td class="line-content"><br></td></tr><tr><td class="line-number" value="40"></td><td class="line-content">					var q = window.location.search;</td></tr><tr><td class="line-number" value="41"></td><td class="line-content">					if((typeof q === "string") &amp;&amp; q[0] === "?" &amp;&amp; (typeof window.URLSearchParams !== "undefined")) {</td></tr><tr><td class="line-number" value="42"></td><td class="line-content">						q = new window.URLSearchParams(q);</td></tr><tr><td class="line-number" value="43"></td><td class="line-content">						var s = q.get("server");</td></tr><tr><td class="line-number" value="44"></td><td class="line-content">						if(s) window.eaglercraftXOpts.joinServer = s;</td></tr><tr><td class="line-number" value="45"></td><td class="line-content">					}</td></tr><tr><td class="line-number" value="46"></td><td class="line-content"><br></td></tr><tr><td class="line-number" value="47"></td><td class="line-content">					main();</td></tr><tr><td class="line-number" value="48"></td><td class="line-content">				}</td></tr><tr><td class="line-number" value="49"></td><td class="line-content">			});</td></tr><tr><td class="line-number" value="50"></td><td class="line-content">		<span class="html-tag">&lt;/script&gt;</span></td></tr><tr><td class="line-number" value="51"></td><td class="line-content">	<span class="html-tag">&lt;/head&gt;</span></td></tr><tr><td class="line-number" value="52"></td><td class="line-content">	<span class="html-tag">&lt;body <span class="html-attribute-name">style</span>="<span class="html-attribute-value">margin:0px;width:100%;height:100%;overflow:hidden;background-color:black;</span>" <span class="html-attribute-name">id</span>="<span class="html-attribute-value">game_frame</span>"&gt;</span></td></tr><tr><td class="line-number" value="53"></td><td class="line-content">	<span class="html-tag">&lt;/body&gt;</span></td></tr><tr><td class="line-number" value="54"></td><td class="line-content"><span class="html-tag">&lt;/html&gt;</span><span class="html-end-of-file"></span></td></tr></tbody></table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eaglercraft Launcher</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2c1446 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(90deg, #B388FF, #7C4DFF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+    }
+
+    .client-group {
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .client-header {
+      padding: 1.25rem 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 16px;
+      position: relative;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1.1rem;
+    }
+
+    .client-header:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .featured-header {
+      background: rgba(124, 77, 255, 0.15);
+      border: 2px solid #9D4CFF;
+    }
+
+    .featured-header:hover {
+      background: rgba(124, 77, 255, 0.2);
+    }
+
+    .recommended-badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: linear-gradient(90deg, #FF00FF, #9D4CFF);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(157, 76, 255, 0.3);
+    }
+
+    .client-versions {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+
+    .client-versions.active {
+      max-height: 300px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: none;
+    }
+
+    .version-button {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .version-button:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .version-tag {
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .version-tag.wasm {
+      background: linear-gradient(90deg, #FF00FF, #9D4CFF);
+      color: white;
+      opacity: 1;
+      box-shadow: 0 2px 8px rgba(157, 76, 255, 0.2);
+    }
+
+    .version-tag.js {
+      background: rgba(255, 255, 255, 0.1);
+      color: #B39DDB;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .featured-button {
+      background: rgba(124, 77, 255, 0.1);
+    }
+
+    .featured-button:hover {
+      background: rgba(124, 77, 255, 0.15);
+    }
+
+  .connection-test {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(124, 77, 255, 0.2);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(124, 77, 255, 0.2);
+}
+
+.connection-test:hover {
+  background: rgba(124, 77, 255, 0.3);
+}
+
+  </style>
+</head>
+<button class="connection-test" onclick="window.location.href='/conntest.html'">
+  Connection Test
+</button>
+
+<body>
+  <div class="container">
+    <h1>CrackedNET</h1>
+
+<div class="client-group">
+  <div class="client-header featured-header" onclick="toggleGroup('astra')">
+    <span>Astra Client</span>
+    <span class="arrow">↓</span>
+    <div class="recommended-badge">RECOMMENDED</div>
+  </div>
+  <div class="client-versions" id="astra-versions">
+      
+    <button onclick="selectClient('Version 1.5 Patch 2 WASM')" class="version-button featured-button">
+      <span>Version 1.5 Patch 2 WASM</span>
+      <div class="version-tag wasm">WASM</div>
+    </button>
+    <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button featured-button">
+      <span>Version 1.5 Patch 2 JS</span>
+      <div class="version-tag js">JS</div>
+    </button>
+    <button onclick="selectClient('Version 1.5 Patch 1 WASM')" class="version-button featured-button">
+      <span>Version 1.5 Patch 1 WASM</span>
+      <div class="version-tag js">WASM</div>
+    </button>
+    <button onclick="selectClient('Version 1.5 Patch 1 JS')" class="version-button">
+      <span>Version 1.5 Patch 1 JS</span>
+      <div class="version-tag js">JS</div>
+    </button>
+    <button onclick="selectClient('Version 1.5 WASM')" class="version-button featured-button">
+      <span>Version 1.5 WASM</span>
+      <div class="version-tag js">WASM</div>
+    </button>
+    <button onclick="selectClient('Version 1.5 JS')" class="version-button">
+      <span>Version 1.5 JS</span>
+      <div class="version-tag js">JS</div>
+    </button>
+    <button onclick="selectClient('Version 1.4 Patch 1 WASM')" class="version-button">
+      <span>Version 1.4 Patch 1 WASM</span>
+      <div class="version-tag js">WASM</div>
+    </button>
+    <button onclick="selectClient('Version 1.4 Patch 1 JS')" class="version-button">
+      <span>Version 1.4 Patch 1 JS</span>
+      <div class="version-tag js">JS</div>
+    </button>
+    <button onclick="selectClient('Version 1.4 WASM')" class="version-button">
+      <span>Version 1.4 WASM</span>
+      <div class="version-tag js">WASM</div>
+    </button>
+    <button onclick="selectClient('Version 1.4 JS')" class="version-button">
+      <span>Version 1.4 JS</span>
+      <div class="version-tag js">JS</div>
+    </button>
+  </div>
+</div>
+
+
+
+    <div class="client-group">
+      <div class="client-header" onclick="toggleGroup('eaglercraft')">
+        <span>Eaglercraft</span>
+        <span class="arrow">↓</span>
+      </div>
+      <div class="client-versions" id="eaglercraft-versions">
+        <button onclick="selectClient('1.8.8 WASM')" class="version-button">
+          <span>1.8.8 WASM Version</span>
+          <div class="version-tag wasm">WASM</div>
+        </button>
+        <button onclick="selectClient('1.8.8 JS')" class="version-button">
+          <span>1.8.8 JavaScript Version</span>
+          <div class="version-tag js">JS</div>
+        </button>
+        <button onclick="selectClient('1.12.2 WASM')" class="version-button">
+          <span>1.12.2 WASM Version</span>
+          <div class="version-tag wasm">WASM</div>
+        </button>
+        <button onclick="selectClient('1.12.2 JS')" class="version-button">
+          <span>1.12.2 JS Version</span>
+          <div class="version-tag js">JS</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="client-group">
+      <div class="client-header" onclick="toggleGroup('resent')">
+        <span>Resent Client</span>
+        <span class="arrow">↓</span>
+      </div>
+      <div class="client-versions" id="resent-versions">
+        <button onclick="selectClient('Resent Client 4.0')" class="version-button">
+          <span>Version 4.0</span>
+          <div class="version-tag js">JS</div>
+        </button>
+        <button onclick="selectClient('Resent Client 4.0 Patch 1')" class="version-button">
+          <span>Version 4.0 Patch 1</span>
+          <div class="version-tag js">JS</div>
+        </button>
+        <button onclick="selectClient('Resent Client 4.0 Patch 2')" class="version-button">
+          <span>Version 4.0 Patch 2</span>
+          <div class="version-tag js">JS</div>
+        </button>
+        <button onclick="selectClient('Resent Client 4.0 Patch 3')" class="version-button">
+          <span>Version 4.0 Patch 3</span>
+          <div class="version-tag wasm">WASM</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleGroup(groupId) {
+      const versions = document.getElementById(`${groupId}-versions`);
+      const header = versions.previousElementSibling;
+      const arrow = header.querySelector('.arrow');
+      
+      versions.classList.toggle('active');
+      header.classList.toggle('active');
+    }
+
+function selectClient(client) {
+  const clientUrls = {
+    "1.8.8 WASM": "/clients/eagler-wasm/index.html",
+    "1.8.8 JS": "/clients/eagler-js/index.html",
+    "1.12.2 WASM": "/clients/112-wasm-u1/index.html",
+    "1.12.2 JS": "/clients/112-javascript-u1/index.html",
+    "Resent Client 4.0": "/clients/resent40/index.html",
+    "Resent Client 4.0 Patch 1": "/clients/resent401/index.html",
+    "Resent Client 4.0 Patch 2": "/clients/resent402/index.html",
+    "Resent Client 4.0 Patch 3": "/clients/resent403/index.html",
+    "Version 1.4 WASM": "/clients/astra-wasm/index.html",
+    "Version 1.4 JS": "/clients/astra-js/index.html",
+    "Version 1.4 Patch 1 JS": "/clients/astra-js-patch1/index.html",
+    "Version 1.4 Patch 1 WASM": "/clients/astra-wasm-patch1/index.html",
+    "Version 1.5 WASM": "/clients/astra15-wasm/index.html",
+    "Version 1.5 JS": "/clients/astra15-js/index.html",
+    "Version 1.5 Patch 1 JS": "/clients/astra151-js/index.html",
+    "Version 1.5 Patch 1 WASM": "/clients/astra151-wasm/index.html",
+    "Version 1.5 Patch 2 WASM": "/clients/astra152-wasm/index.html",
+    "Version 1.5 Patch 2 JS": "/clients/astra152-js/index.html"
+  };
+
+  const url = clientUrls[client];
+  if (url) {
+    window.location.href = url;
+  } else {
+    console.error("Client not found:", client);
+  }
+}
+
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"94ac2b6129c1588a","version":"2025.5.0","r":1,"token":"a74ae04eb0a7435ba75bfe23fa4de628","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
