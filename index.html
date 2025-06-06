@@ -1,11 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donut Launcher</title>
   <style>
+    :root {
+      --bg-dark: linear-gradient(135deg, #1a1a2e 0%, #2c1446 100%);
+      --bg-light: linear-gradient(135deg, #ffffff 0%, #eaeaea 100%);
+      --text-dark: #fff;
+      --text-light: #222;
+      --card-dark: rgba(255, 255, 255, 0.05);
+      --card-light: rgba(0, 0, 0, 0.05);
+      --border-dark: rgba(255, 255, 255, 0.1);
+      --border-light: rgba(0, 0, 0, 0.1);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,8 +24,8 @@
     }
 
     body {
-      background: linear-gradient(135deg, #1a1a2e 0%, #2c1446 100%);
-      color: #fff;
+      background: var(--bg-dark);
+      color: var(--text-dark);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -23,18 +33,30 @@
       min-height: 100vh;
       text-align: center;
       padding: 2rem;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
     }
 
     .container {
       max-width: 600px;
       width: 100%;
       padding: 2.5rem;
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--card-dark);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-dark);
       border-radius: 24px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: background 0.4s ease, border 0.4s ease;
+    }
+
+    body.light-mode .container {
+      background: var(--card-light);
+      border: 1px solid var(--border-light);
     }
 
     h1 {
@@ -63,7 +85,7 @@
       border-radius: 16px;
       position: relative;
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-dark);
       font-size: 1.1rem;
     }
 
@@ -106,7 +128,7 @@
 
     .client-versions.active {
       max-height: 300px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-dark);
       border-top: none;
     }
 
@@ -115,7 +137,7 @@
       padding: 1rem 1.5rem;
       background: transparent;
       border: none;
-      color: #fff;
+      color: inherit;
       cursor: pointer;
       font-size: 1rem;
       display: flex;
@@ -148,6 +170,11 @@
       color: #B39DDB;
     }
 
+    body.light-mode .version-tag.js {
+      background: rgba(0, 0, 0, 0.1);
+      color: #6a1b9a;
+    }
+
     .arrow {
       transition: transform 0.3s ease;
     }
@@ -164,48 +191,77 @@
       background: rgba(124, 77, 255, 0.15);
     }
 
-  .connection-test {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(124, 77, 255, 0.2);
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
-  box-shadow: 0 4px 8px rgba(124, 77, 255, 0.2);
-}
+    .connection-test {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(124, 77, 255, 0.2);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 8px rgba(124, 77, 255, 0.2);
+    }
 
-.connection-test:hover {
-  background: rgba(124, 77, 255, 0.3);
-}
+    .connection-test:hover {
+      background: rgba(124, 77, 255, 0.3);
+    }
 
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(124, 77, 255, 0.2);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 8px rgba(124, 77, 255, 0.2);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(124, 77, 255, 0.3);
+    }
+
+    body.light-mode .theme-toggle {
+      background: rgba(102, 51, 153, 0.1);
+      color: #222;
+    }
+
+    body.light-mode .theme-toggle:hover {
+      background: rgba(102, 51, 153, 0.2);
+    }
   </style>
 </head>
-  
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
   <div class="container">
     <h1>Donut Launcher</h1>
 
-<div class="client-group">
-  <div class="client-header featured-header" onclick="toggleGroup('astra')">
-    <span>Astra Client</span>
-    <span class="arrow">↓</span>
-    <div class="recommended-badge">RECOMMENDED</div>
-  </div>
-  <div class="client-versions" id="astra-versions">
-    <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button featured-button">
-      <span>Version 1.5 Patch 2 JS</span>
-      <div class="version-tag js">JS</div>
-  </div>
-</div>
-
-
+    <div class="client-group">
+      <div class="client-header featured-header" onclick="toggleGroup('astra')">
+        <span>Astra Client</span>
+        <span class="arrow">↓</span>
+        <div class="recommended-badge">RECOMMENDED</div>
+      </div>
+      <div class="client-versions" id="astra-versions">
+        <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button featured-button">
+          <span>Version 1.5 Patch 2 JS</span>
+          <div class="version-tag js">JS</div>
+        </button>
+      </div>
+    </div>
 
     <div class="client-group">
       <div class="client-header" onclick="toggleGroup('eaglercraft')">
@@ -239,32 +295,43 @@
   </div>
 
   <script>
+    // Toggle dropdowns
     function toggleGroup(groupId) {
       const versions = document.getElementById(`${groupId}-versions`);
       const header = versions.previousElementSibling;
       const arrow = header.querySelector('.arrow');
-      
       versions.classList.toggle('active');
       header.classList.toggle('active');
     }
 
-function selectClient(client) {
-  const clientUrls = {
-    "1.8.8 JS": "/clients/eagler-js/index.html",
-    "1.12.2 JS": "/clients/112-javascript-u1/index.html",
-    "Resent Client 4.0": "/clients/resent40/index.html",
-    "Version 1.5 Patch 2 JS": "/clients/astra152-js/index.html"
-  };
+    // Handle client selection
+    function selectClient(client) {
+      const clientUrls = {
+        "1.8.8 JS": "/clients/eagler-js/index.html",
+        "1.12.2 JS": "/clients/112-javascript-u1/index.html",
+        "Resent Client 4.0": "/clients/resent40/index.html",
+        "Version 1.5 Patch 2 JS": "/clients/astra152-js/index.html"
+      };
+      const url = clientUrls[client];
+      if (url) {
+        window.location.href = url;
+      } else {
+        console.error("Client not found:", client);
+      }
+    }
 
-  const url = clientUrls[client];
-  if (url) {
-    window.location.href = url;
-  } else {
-    console.error("Client not found:", client);
-  }
-}
+    // Handle theme toggle + persist
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+    }
 
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
   </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"94ac2b6129c1588a","version":"2025.5.0","r":1,"token":"a74ae04eb0a7435ba75bfe23fa4de628","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/..."></script>
 </body>
 </html>
