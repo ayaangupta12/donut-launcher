@@ -7,13 +7,9 @@
   <style>
     :root {
       --bg-dark: linear-gradient(135deg, #1a1a2e 0%, #2c1446 100%);
-      --bg-light: linear-gradient(135deg, #ffffff 0%, #eaeaea 100%);
-      --text-dark: #fff;
+      --text-dark: #ffffff;
+      --bg-light: #f4f4ff;
       --text-light: #222;
-      --card-dark: rgba(255, 255, 255, 0.05);
-      --card-light: rgba(0, 0, 0, 0.05);
-      --border-dark: rgba(255, 255, 255, 0.1);
-      --border-light: rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -33,7 +29,7 @@
       min-height: 100vh;
       text-align: center;
       padding: 2rem;
-      transition: background 0.4s ease, color 0.4s ease;
+      transition: all 0.4s ease;
     }
 
     body.light-mode {
@@ -45,18 +41,17 @@
       max-width: 600px;
       width: 100%;
       padding: 2.5rem;
-      background: var(--card-dark);
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid var(--border-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 24px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      transition: background 0.4s ease, border 0.4s ease;
     }
 
     body.light-mode .container {
-      background: var(--card-light);
-      border: 1px solid var(--border-light);
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     h1 {
@@ -85,7 +80,7 @@
       border-radius: 16px;
       position: relative;
       transition: all 0.3s ease;
-      border: 1px solid var(--border-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       font-size: 1.1rem;
     }
 
@@ -128,7 +123,7 @@
 
     .client-versions.active {
       max-height: 300px;
-      border: 1px solid var(--border-dark);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-top: none;
     }
 
@@ -170,11 +165,6 @@
       color: #B39DDB;
     }
 
-    body.light-mode .version-tag.js {
-      background: rgba(0, 0, 0, 0.1);
-      color: #6a1b9a;
-    }
-
     .arrow {
       transition: transform 0.3s ease;
     }
@@ -191,31 +181,10 @@
       background: rgba(124, 77, 255, 0.15);
     }
 
-    .connection-test {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(124, 77, 255, 0.2);
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 8px rgba(124, 77, 255, 0.2);
-    }
-
-    .connection-test:hover {
-      background: rgba(124, 77, 255, 0.3);
-    }
-
     .theme-toggle {
       position: absolute;
       top: 20px;
-      left: 20px;
+      right: 20px;
       background: rgba(124, 77, 255, 0.2);
       color: #fff;
       border: none;
@@ -241,6 +210,7 @@
     body.light-mode .theme-toggle:hover {
       background: rgba(102, 51, 153, 0.2);
     }
+
   </style>
 </head>
 <body>
@@ -286,8 +256,8 @@
         <span class="arrow">↓</span>
       </div>
       <div class="client-versions" id="resent-versions">
-        <button onclick="selectClient('Resent Client 4.0')" class="version-button">
-          <span>Version 4.0</span>
+        <button onclick="selectClient('Resent Client 4.0 Patch 4')" class="version-button">
+          <span>Version 4.0 Patch 4</span>
           <div class="version-tag js">JS</div>
         </button>
       </div>
@@ -295,16 +265,15 @@
   </div>
 
   <script>
-    // Toggle dropdowns
     function toggleGroup(groupId) {
       const versions = document.getElementById(`${groupId}-versions`);
       const header = versions.previousElementSibling;
       const arrow = header.querySelector('.arrow');
+
       versions.classList.toggle('active');
       header.classList.toggle('active');
     }
 
-    // Handle client selection
     function selectClient(client) {
       const clientUrls = {
         "1.8.8 JS": "/clients/eagler-js/index.html",
@@ -312,6 +281,7 @@
         "Resent Client 4.0": "/clients/resent40/index.html",
         "Version 1.5 Patch 2 JS": "/clients/astra152-js/index.html"
       };
+
       const url = clientUrls[client];
       if (url) {
         window.location.href = url;
@@ -320,18 +290,9 @@
       }
     }
 
-    // Handle theme toggle + persist
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.body.classList.add('light-mode');
-    }
-
     function toggleTheme() {
-      const isLight = document.body.classList.toggle('light-mode');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      document.body.classList.toggle("light-mode");
     }
   </script>
-
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/..."></script>
 </body>
 </html>
