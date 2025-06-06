@@ -154,16 +154,11 @@
       opacity: 0.8;
     }
 
-    .version-tag.wasm {
+    .version-tag.js {
       background: linear-gradient(90deg, #FF00FF, #9D4CFF);
       color: white;
       opacity: 1;
       box-shadow: 0 2px 8px rgba(157, 76, 255, 0.2);
-    }
-
-    .version-tag.js {
-      background: rgba(255, 255, 255, 0.1);
-      color: #B39DDB;
     }
 
     .arrow {
@@ -243,7 +238,7 @@
         <span class="arrow">↓</span>
       </div>
       <div class="client-versions" id="astra-versions">
-        <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button featured-button">
+        <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button">
           <span>Version 1.5 Patch 2 JS</span>
           <div class="version-tag js">JS</div>
         </button>
@@ -278,7 +273,7 @@
         <div class="recommended-badge">RECOMMENDED</div>
       </div>
       <div class="client-versions" id="resent-versions">
-        <button onclick="selectClient('Resent Client 4.0')" class="version-button">
+        <button onclick="selectClient('Resent Client 4.0')" class="version-button featured-button">
           <span>Version 4.0 Patch 4</span>
           <div class="version-tag js">JS</div>
         </button>
