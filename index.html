@@ -212,6 +212,23 @@
       background: rgba(102, 51, 153, 0.2);
     }
 
+    .hosted-button {
+      margin-top: 2rem;
+      background: linear-gradient(90deg, #FF00FF, #9D4CFF);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: default;
+      box-shadow: 0 4px 12px rgba(157, 76, 255, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .hosted-button:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -246,7 +263,8 @@
         <button onclick="selectClient('1.12.2 JS')" class="version-button">
           <span>1.12.2 JavaScript Version</span>
           <div class="version-tag js">JS</div>
-          <button onclick="selectClient('1.5.2 JS')" class="version-button">
+        </button>
+        <button onclick="selectClient('1.5.2 JS')" class="version-button">
           <span>1.5.2 JavaScript Version</span>
           <div class="version-tag js">JS</div>
         </button>
@@ -267,6 +285,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Hosted by Button -->
+  <button class="hosted-button">Hosted by infinitydude12</button>
 
   <script>
     function toggleGroup(groupId) {
