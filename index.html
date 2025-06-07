@@ -154,16 +154,11 @@
       opacity: 0.8;
     }
 
-    .version-tag.wasm {
+    .version-tag.js {
       background: linear-gradient(90deg, #FF00FF, #9D4CFF);
       color: white;
       opacity: 1;
       box-shadow: 0 2px 8px rgba(157, 76, 255, 0.2);
-    }
-
-    .version-tag.js {
-      background: rgba(255, 255, 255, 0.1);
-      color: #B39DDB;
     }
 
     .arrow {
@@ -212,6 +207,23 @@
       background: rgba(102, 51, 153, 0.2);
     }
 
+    .hosted-button {
+      margin-top: 2rem;
+      background: linear-gradient(90deg, #FF00FF, #9D4CFF);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: default;
+      box-shadow: 0 4px 12px rgba(157, 76, 255, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .hosted-button:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -221,13 +233,26 @@
     <h1>Donut Launcher</h1>
 
     <div class="client-group">
-      <div class="client-header featured-header" onclick="toggleGroup('astra')">
+      <div class="client-header" onclick="toggleGroup('astra')">
         <span>Astra Client</span>
         <span class="arrow">↓</span>
       </div>
       <div class="client-versions" id="astra-versions">
-        <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button featured-button">
+        <button onclick="selectClient('Version 1.5 Patch 2 JS')" class="version-button">
           <span>Version 1.5 Patch 2 JS</span>
+          <div class="version-tag js">JS</div>
+        </button>
+      </div>
+    </div>
+    
+    <div class="client-group">
+      <div class="client-header" onclick="toggleGroup('presicion')">
+        <span>Precision Client</span>
+        <span class="arrow">↓</span>
+      </div>
+      <div class="client-versions" id="precision-versions">
+        <button onclick="selectClient('precision-versions')" class="version-button">
+          <span>Version 1.5 JS</span>
           <div class="version-tag js">JS</div>
         </button>
       </div>
@@ -244,9 +269,10 @@
           <div class="version-tag js">JS</div>
         </button>
         <button onclick="selectClient('1.12.2 JS')" class="version-button">
-          <span>1.12.2 JS Version</span>
+          <span>1.12.2 JavaScript Version</span>
           <div class="version-tag js">JS</div>
-          <button onclick="selectClient('1.5.2 JS')" class="version-button">
+        </button>
+        <button onclick="selectClient('1.5.2 JS')" class="version-button">
           <span>1.5.2 JavaScript Version</span>
           <div class="version-tag js">JS</div>
         </button>
@@ -254,19 +280,22 @@
     </div>
 
     <div class="client-group">
-      <div class="client-header" onclick="toggleGroup('resent')">
+      <div class="client-header featured-header" onclick="toggleGroup('resent')">
         <span>Resent Client</span>
         <span class="arrow">↓</span>
-        <div class="recommended-badge">RECOMMENDED</div>
+        <div class="recommended-badge">POPULAR</div>
       </div>
       <div class="client-versions" id="resent-versions">
-        <button onclick="selectClient('Resent Client 4.0')" class="version-button">
+        <button onclick="selectClient('Resent Client 4.0')" class="version-button featured-button">
           <span>Version 4.0 Patch 4</span>
           <div class="version-tag js">JS</div>
         </button>
       </div>
     </div>
   </div>
+
+  <!-- Hosted by Button -->
+  <button class="hosted-button">Hosted by infinitydude12</button>
 
   <script>
     function toggleGroup(groupId) {
@@ -285,6 +314,7 @@
         "1.5.2 JS": "/clients/152-js/index.html",
         "Resent Client 4.0": "/clients/resent40/index.html",
         "Version 1.5 Patch 2 JS": "/clients/astra152-js/index.html"
+        "Version 1.5 JS": "/clients/precision-js/index.html"
       };
 
       const url = clientUrls[client];
