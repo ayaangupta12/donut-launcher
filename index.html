@@ -246,6 +246,21 @@
     </div>
     
     <div class="client-group">
+      <div class="client-header featured-header" onclick="toggleGroup('resent')">
+        <span>Donut Client</span>
+        <span class="arrow">↓</span>
+        <div class="recommended-badge">THE BEST</div>
+      </div>
+      <div class="client-versions" id="donut-versions">
+        <button onclick="selectClient('Donut Client 1.8')" class="version-button featured-button">
+          <span>Version 1.8 Patch 1</span>
+          <div class="version-tag js">JS</div>
+        </button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="client-group">
       <div class="client-header" onclick="toggleGroup('precision')">
         <span>Precision Client</span>
         <span class="arrow">↓</span>
@@ -283,10 +298,9 @@
       <div class="client-header featured-header" onclick="toggleGroup('resent')">
         <span>Resent Client</span>
         <span class="arrow">↓</span>
-        <div class="recommended-badge">POPULAR</div>
       </div>
       <div class="client-versions" id="resent-versions">
-        <button onclick="selectClient('Resent Client 4.0')" class="version-button featured-button">
+        <button onclick="selectClient('Resent Client 4.0')" class="version-button">
           <span>Version 4.0 Patch 4</span>
           <div class="version-tag js">JS</div>
         </button>
@@ -314,6 +328,7 @@
         "1.5.2 JS": "/clients/152-js/index.html",
         "Resent Client 4.0": "/clients/resent40/index.html",
         "Version 1.5 Patch 2 JS": "/clients/astra152-js/index.html",
+        "Version 1.8 Patch 1": "/clients/donut-js/index.html",
         "Version 1.5 JS": "/clients/precision-js/index.html"
       };
 
